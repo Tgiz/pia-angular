@@ -1,39 +1,38 @@
-<div class="login">
-
-    <div class="Customer Support">
-        <p><b>Customer Support</b> </p>
-        <p><b>0850 350 35 00</b></p>
+<div class="container">
+    <div class="login">
+        
+    <div class="Customer-Support">
+        <p>Customer Support </p>
+        <p>0850 350 35 00 </p>
     </div>
     
-    <div>
+    <div class="photo-wrapper">
         <img src="../../assets//piaangmovies.png" alt="PiaAng Movies Logo">
     </div>
 
-        <form (submit) = "login()" autocomplete = "new-password">
+        <form   autocomplete= "new-password">
 
             <h1> Login with your e-mail account</h1>
-
-            <div  class="form-control">
-                <label for="email">E-mail</label>
-                <input id="email" type="email" placeholder="example@example.com" required/>
-            </div>
+            <label for="username"> </label>
+                <input type="text" name="username" [(ngModel)]="formdata.username" placeholder="Username*" required /> <br>
+            
 
             <div  class="form-control">
                 <label for="password">Password</label>
-                <input id="password" type="password" placeholder="Password*" required/>
+                <input name="password" [(ngModel)]="formdata.password" type="password" autocomplete="new-password" placeholder="Password*" required/>
             </div>
 
-            <div class="form-control">
+            <div class="checkbox-wrapper remember-input">
                 <input type="checkbox" id="chk" value="Remember me"> 
                 <label for="check">Remember me</label>
             </div>
 
             <div class="Login-Signin Button">
-                <button type="button">Login</button>
+                <button (click)="onUserLoginSuccess()" type="button">Login</button>
             </div>
 
         <p><a routerLink="/user-signup">Create a new account!</a></p>
 
         </form>
-
+    </div>
 </div>

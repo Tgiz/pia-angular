@@ -1,0 +1,113 @@
+.container{
+    display: flexbox;
+}
+.Customer-Support{
+    text-align: right;
+    color: white;
+    margin: 10px;;
+}
+img{
+    top: 0;
+    height: 100px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ccc;
+    color : #78AAC6 ;
+    font-family:"Lucida Console", "Courier New", monospace ;
+}
+
+form {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 16px 16px 24px;
+    box-shadow: 0 2px 32px rgba(0,0,0,0.15);
+    border-radius: 4px;
+}
+
+
+.signup-form-control {
+    margin-bottom: 16px;
+    
+    label {
+        display: block;
+        color: white;
+    }
+}
+
+label{
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: white;
+}
+
+input {
+    padding: 8px;
+    height: 35px;
+    border-radius: 4px;
+    width: 100%;
+    border: 2px solid #ccc;
+    background-color: white;
+    
+}
+
+button{
+    background-color: black;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+/* .checkbox {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px;
+} */
+
+.photo-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 3px;
+    left: -7px;
+}
+
+.checkbox-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    input{
+        width: 100%;
+    }
+    label{
+        width: 100%;
+    }
+
+}
+
+.remember-input {
+    align-items: center; 
+    justify-content:left;
+    gap:10px;
+}
+.remember-input input{
+    max-width:35px;
+}
+
+p {
+    color: white;
+}
+a{
+    color: white;
+}

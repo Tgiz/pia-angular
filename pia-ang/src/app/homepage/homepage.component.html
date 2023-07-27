@@ -1,0 +1,9 @@
+
+<div *ngFor="let movie of movies" class="movie-card"> 
+  <app-movie-card [movie]="movie">
+    
+  </app-movie-card>
+
+</div>
+<div *ngIf="isLoading" class="loading">Loading...</div>
+<div *ngIf="isError" class="error">Error occured while fetching data.</div>

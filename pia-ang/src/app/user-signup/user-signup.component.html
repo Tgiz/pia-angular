@@ -1,46 +1,51 @@
+<div class="container">
 <div class="signup">
 
-    <div class="Customer Support">
-        <p><b>Customer Support</b> </p>
-        <p><b>0850 350 35 00</b></p>
+    <div class="Customer-Support">
+        <p>Customer Support</p>
+        <p>0850 350 35 00</p>
     </div>
     
-    <div>
+    <div class="photo-wrapper">
         <img src="../../assets//piaangmovies.png" alt="PiaAng Movies Logo">
     </div>
 
-    <h1>Sign Up</h1>
+        <form > 
 
-        <form>
+            <h1>Sign Up</h1>
+            
         <div class="signup-form-control">
             <label for="email"> E-mail</label>
-            <input type="email" name="email" placeholder="example@example.com*" required /> <br>
+            <input type="email" name="email" [(ngModel)]="formdata.email" autocomplete="new-email" placeholder="example@example.com*" required /> <br>
 
             <div class="name">
+                <label for="username"> </label>
+                <input type="text" name="username" [(ngModel)]="formdata.username" placeholder="Username*" required /> <br>
                 <label for="name"> </label>
-                <input type="text" name="name" placeholder="Firtsname*" required /> <br>
+                <input type="text" name="name" [(ngModel)]="formdata.firstname" placeholder="Firstname*" required /> <br>
                 <label for="lastname"> </label>
-                <input type="text" name="lastname" placeholder="lastname*" required /> <br>
+                <input type="text" name="lastname" [(ngModel)]="formdata.lastname" placeholder="Lastname*" required /> <br>
             </div>
 
             <label for="password">Enter password</label>
-            <input type="password" name="password" placeholder="Password*" required/><br>
+            <input type="password" name="password" [(ngModel)]="formdata.password" placeholder="Password*" required/><br>
             
 
             <label for="password-repeat">Repeat password</label>
             <input type="password" name="password-repeat" placeholder="Password*" required/> <br>
-            
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label><br>
-            
+           
+            <div class="checkbox-wrapper remember-input">
+                <input type="checkbox" id="chk" value="Remember me"> 
+                <label for="check">Remember me</label>
+            </div>
         </div>
 
 
             <p>By creating an account you agree to our <a href="#" >Terms & Privacy</a>.</p>
             <a routerLink="/user-login">Log In</a>
-            <button type="submit" class="signupbtn">Sign Up </button>
-        
+            <button mat-raised-button color="primary"  class="signupbtn" (click)="onUserSignupSuccess()" >Sign Up </button>
+
         </form>
 
+</div>
 </div>
