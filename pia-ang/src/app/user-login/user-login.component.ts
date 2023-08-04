@@ -22,7 +22,9 @@ export class UserLoginComponent{
             password: this.formdata.password
         }
         this.mongodbService.login(data).subscribe((res:any)=>{
-            alert(res?.message)
+            localStorage.setItem("myUserInfo", JSON.stringify(res));
+            const message = "Login Succesful! Welcome."
+            alert(message)
           this.router.navigateByUrl('/homepage');  
     } ) 
    

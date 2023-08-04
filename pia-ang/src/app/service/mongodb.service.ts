@@ -13,6 +13,11 @@ export interface Login{
   password: string;
   
 }
+export interface WatchList{
+  user: string;
+  movie: string;
+  like: boolean;
+}
 
 @Injectable({
 
@@ -51,6 +56,22 @@ export class MongodbService {
     
     return this.http.post(url, data);
   }
+
+  addWatchList(data: WatchList){
+    const url = `${this.baseUrl}watchlist`;
+
+    return this.http.post(url, data);
+  }
+
+  getWatchList(userId :any){
+    const url = `${this.baseUrl}watchlist/${userId}`;
+
+    return this.http.get(url);
+  }
   
-  
+  removeFromWatchList(movieId : any){
+    const url = `${this.baseUrl}watchlist/${movieId}`;
+    
+    return this.http.delete(url);
+  }
 }

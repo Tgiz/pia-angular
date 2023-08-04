@@ -1,4 +1,5 @@
-.navbar{
+/* .navbar{
+    box-sizing: border-box;
     overflow: hidden;
     background-color:#BCBBBB ;
 }
@@ -7,6 +8,7 @@
     width: 75px;
     float: left;
     margin: 2px;
+    cursor: pointer;
 }
 
 .search{
@@ -16,6 +18,7 @@
     padding: 10px 10px;
     box-sizing: border-box;
     margin: 10px 5px ;
+    
 
 }
 .homepage-centered{
@@ -50,4 +53,87 @@ float: left;
 .language-options{
     margin-right: 15px;
     
+} */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/* Style for the navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #BCBBBB; /* Change this to your desired background color */
+    padding: 10px;
+    color: white; /* Change this to your desired text color */
+}
+
+/* Style for the logo */
+.piaang-logo {
+    width: 75px; 
+    height: 75px;
+    cursor: pointer;
+}
+
+/* Style for the search input */
+.search {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px; 
+}
+
+/* Style for the home page link */
+.homepage-centered {
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+}
+
+/* Style for the language options */
+.language-options {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.language-options img {
+    margin-right: 5px;
+}
+
+/* Style for the My Watchlist link */
+.wlist {
+    margin-left: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style for links on hover */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Optional: If you want to make the navbar sticky at the top of the page */
+/* Uncomment the following lines */
+
+/*
+body {
+    margin: 0;
+    padding: 0;
+}
+*/
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+}
+

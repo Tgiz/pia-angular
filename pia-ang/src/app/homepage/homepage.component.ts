@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 
 import { MovieService } from '../service/movies.service';
 
@@ -21,7 +21,7 @@ export class HomepageComponent implements OnInit {
 
   movies: any[]=[];
   isLoading: boolean = false;
-
+  moviePosters: string[] = [];
   isError: boolean = false;
 
 
@@ -39,27 +39,11 @@ export class HomepageComponent implements OnInit {
   }
 
 
-
-
-  @HostListener('window:scroll', ['$event'])
-
   onScroll(): void {
 
-    const pos = (document.documentElement.scrollTop || document.body.scrollTop)
+    this.pageNumber++;
 
-    const max = document.body.scrollHeight - document.documentElement.clientHeight;
-
-    console.log(pos, max);
-
-    if (pos > max) {
-
-      this.pageNumber++;
-
-      this.fetchData();
-
-      document.scrollingElement?.scrollTo(0, pos - 50);
-
-    }
+    this.fetchData();
 
   }
 
@@ -67,7 +51,6 @@ export class HomepageComponent implements OnInit {
   private fetchData(): void {
 
     this.isLoading = true;
-
 
     this.movieService.getWeeklyTrendMovies(this.pageNumber).subscribe(
 
@@ -77,7 +60,11 @@ export class HomepageComponent implements OnInit {
 
         this.isLoading = false;
 
-        this.movies = data.results
+        data.results.forEach((element: any) => {
+
+        this.movies.push(element)
+
+        })
 
       },
 
@@ -90,9 +77,24 @@ export class HomepageComponent implements OnInit {
         console.error('Error fetching data:', error);
 
       }
-
+      
     );
+      
+  }
+  
+  enteredSearchValue: string = '';
+
+  @Output()
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+  onSearchTextChanged(){    
+
+    this.searchTextChanged.emit(this.enteredSearchValue);
 
   }
 
+  getMovieData(event: any) {
+
+    this.movies = event.results;
+
+  }
 }

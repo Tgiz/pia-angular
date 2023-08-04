@@ -8,5 +8,4 @@ import { MovieService } from './service/movies.service';
 })
 export class AppComponent  {
  
-  
 }

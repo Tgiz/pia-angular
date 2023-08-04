@@ -7,14 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule} from '@angular/material/card';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
-
 import { NavbarComponent } from './navbar/navbar.component';
-import { MovielistComponent } from './movielist/movielist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomepageComponent } from './homepage/homepage.component'
 import { MovieService } from './service/movies.service';
 import { FormsModule } from '@angular/forms';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { WatchlistComponent } from './watchlist/watchlist.component';
+import { WatchlistService} from './service/watchlist.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,10 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
     UserLoginComponent,
     UserSignupComponent,
     NavbarComponent,
-    MovielistComponent,
+    
     HomepageComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    WatchlistComponent
     
   ],
   imports: [    
@@ -33,11 +35,12 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
     BrowserAnimationsModule,
     MatCardModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    InfiniteScrollModule
 
 
   ],
-  providers: [MovieService],
+  providers: [MovieService, WatchlistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

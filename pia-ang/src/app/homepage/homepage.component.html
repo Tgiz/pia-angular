@@ -1,9 +1,18 @@
+<app-navbar (movieData)="getMovieData($event)"></app-navbar>
 
-<div *ngFor="let movie of movies" class="movie-card"> 
-  <app-movie-card [movie]="movie">
-    
-  </app-movie-card>
+<div class="row" infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="50"
+(scrolled)="onScroll()">
+
+  <div class="col-md-3 mt-2" *ngFor="let movie of movies">
+
+    <app-movie-card [movie]="movie"></app-movie-card>
+
+  </div>
+
+  <div *ngIf="isLoading" class="loading">Loading...</div>
+
+  <div *ngIf="isError" class="error">Error occurred while fetching data.</div>
 
 </div>
-<div *ngIf="isLoading" class="loading">Loading...</div>
-<div *ngIf="isError" class="error">Error occured while fetching data.</div>
