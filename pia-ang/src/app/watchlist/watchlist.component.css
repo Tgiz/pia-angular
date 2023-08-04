@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width:100%;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #BCBBBB;
+    padding: 10px;
+    color: white; 
+}
+.piaang-logo {
+    width: 75px; 
+    height: 75px;
+    cursor: pointer;
+}
+a{
+    color: white;
+}
+.homepage {
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+}

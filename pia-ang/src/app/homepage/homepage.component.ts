@@ -11,7 +11,7 @@ import { NgFor } from '@angular/common';
 
   selector: 'app-homepage',
 
-  templateUrl: './homepage.component.html',
+  templateUrl: './homepage.component.html', 
 
   styleUrls: ['./homepage.component.css'],
 

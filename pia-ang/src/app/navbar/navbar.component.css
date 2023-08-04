@@ -1,85 +1,28 @@
-/* .navbar{
-    box-sizing: border-box;
-    overflow: hidden;
-    background-color:#BCBBBB ;
-}
 
-.piaang-logo{
-    width: 75px;
-    float: left;
-    margin: 2px;
-    cursor: pointer;
-}
-
-.search{
-    background-color: #D9D9D9;
-    border: 2px solid #D9D9D9;
-    border-radius: 6px;
-    padding: 10px 10px;
-    box-sizing: border-box;
-    margin: 10px 5px ;
-    
-
-}
-.homepage-centered{
-    text-align: center;
-    font-family:'Courier New', Courier, monospace;
-    font-size: x-large;
-    text-decoration: none;
-    color: white;
-    position: absolute;
-    margin-top: 20px;
-    
-}
-
-.homepage-centered a {
-float: left;
-  color: #f2f2f2;
-  text-align: center;
-  }
-
-.elements{
-    float: right;
-    margin: 5px;
-    margin-bottom: 5px;
-}
-
-.wlist{
-    text-decoration: none;
-    color: white;
-    margin-right: 20px ;
-    position: fixed;
-}
-.language-options{
-    margin-right: 15px;
-    
-} */
-
-/* Reset default margin and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Style for the navbar container */
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #BCBBBB; /* Change this to your desired background color */
+    background-color: #BCBBBB;
     padding: 10px;
-    color: white; /* Change this to your desired text color */
+    color: white; 
 }
 
-/* Style for the logo */
+
 .piaang-logo {
     width: 75px; 
     height: 75px;
     cursor: pointer;
 }
 
-/* Style for the search input */
+
 .search {
     padding: 5px;
     border: 1px solid #ccc;
@@ -87,7 +30,7 @@ float: left;
     width: 200px; 
 }
 
-/* Style for the home page link */
+
 .homepage-centered {
     margin-left: auto;
     margin-right: auto;
@@ -98,7 +41,7 @@ float: left;
     font-size: x-large;
 }
 
-/* Style for the language options */
+
 .language-options {
     display: flex;
     align-items: center;
@@ -116,20 +59,13 @@ float: left;
     text-decoration: none;
 }
 
-/* Style for links on hover */
+
 a:hover {
     text-decoration: underline;
 }
 
-/* Optional: If you want to make the navbar sticky at the top of the page */
-/* Uncomment the following lines */
 
-/*
-body {
-    margin: 0;
-    padding: 0;
-}
-*/
+
 .navbar {
     position: sticky;
     top: 0;
@@ -137,3 +73,14 @@ body {
     
 }
 
+.login{
+    border-radius: 2px;
+    border: none;
+    color: blue;
+    margin: 2px;
+}
+.logout{
+    border-radius: 2px;
+    border: none;
+    color: blue;
+}
