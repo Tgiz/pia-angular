@@ -7,8 +7,10 @@
 
   <div class="col-md-3 mt-2" *ngFor="let movie of movies">
 
-    <app-movie-card [movie]="movie"></app-movie-card>
+  <p *ngIf="isMovieInWatchlist(movie)" class="watchlist-indicator">Added to Watchlist</p>
 
+    <app-movie-card [movie]="movie" (addMovie)="changeWatchlist($event)" [selectedMovies]="selectedMovies"></app-movie-card>
+  
   </div>
 
   <div *ngIf="isLoading" class="loading">Loading...</div>

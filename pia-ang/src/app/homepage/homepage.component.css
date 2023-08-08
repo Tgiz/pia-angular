@@ -1,0 +1,16 @@
+.change-button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .added {
+    background-color: green;
+  }
+  
+  .notadded {
+    background-color: blue;
+  }

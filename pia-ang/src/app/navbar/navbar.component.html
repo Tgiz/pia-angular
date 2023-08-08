@@ -1,10 +1,10 @@
 <div class="navbar">
         
-        <img class="piaang-logo" src="../../assets/movieicon.png" alt="navbar-logo" routerLink="/">
+        <img class="piaang-logo" src="../../assets/movieicon.png"  alt="navbar-logo"routerLink="/homepage" >
        
         <input class="search" type="text" placeholder="Search movie..." (keyup)="searchMovies($event)">
         
-        <a class="homepage-centered" href="#home">Home Page</a>
+        <a class="homepage-centered" href="#home" routerLink="/homepage">Home Page</a>
 
         <a class="wlist" routerLink="/watchlist">My Watchlist</a>
             <div class="language-options">
@@ -12,6 +12,6 @@
                 <img src="https://img.icons8.com/?size=512&id=aRiu1GGi6Aoe&format=png" alt="english" width="30px">
             </div>
 
-        <button class="login"> Login</button>   
+        
 
 </div>

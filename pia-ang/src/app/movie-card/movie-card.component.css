@@ -76,4 +76,13 @@ img{
 }
 
 
+.added {
+  background-color: gray
+  ;
+}
+
+.notadded {
+  background-color: white;
+}
+
 

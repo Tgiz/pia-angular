@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 
 export interface User{
   username: string;
@@ -29,6 +30,7 @@ export interface WatchList{
 export class MongodbService {
 
   private baseUrl = 'http://localhost:3002/';
+  addedWatchList: any;
 
   private headers = {
 
@@ -65,7 +67,6 @@ export class MongodbService {
 
   getWatchList(userId :any){
     const url = `${this.baseUrl}watchlist/${userId}`;
-
     return this.http.get(url);
   }
   

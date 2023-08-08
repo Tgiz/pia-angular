@@ -11,7 +11,7 @@ import { WatchlistComponent } from './watchlist/watchlist.component';
 
 
 const routes: Routes = [
-  {path:'', component: UserLoginComponent},
+  {path:'', component: HomepageComponent},
   {path:'user-login', component: UserLoginComponent},
   {path: 'user-signup', component: UserSignupComponent},
   {path: 'navbar', component: NavbarComponent},

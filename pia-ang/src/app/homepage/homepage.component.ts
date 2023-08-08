@@ -2,6 +2,8 @@ import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/
 
 import { MovieService } from '../service/movies.service';
 
+import { MongodbService } from '../service/mongodb.service';
+
 import { NgFor } from '@angular/common';
 
 
@@ -20,23 +22,57 @@ import { NgFor } from '@angular/common';
 export class HomepageComponent implements OnInit {
 
   movies: any[]=[];
+  selectedMovies: any;
   isLoading: boolean = false;
   moviePosters: string[] = [];
   isError: boolean = false;
 
 
   private pageNumber: number = 1;
+  myUserInfo:any = localStorage.getItem("myUserInfo");
+  userId = JSON.parse(this.myUserInfo)?.id;
 
-  constructor(private movieService: MovieService) {}
 
+  constructor(private movieService: MovieService,
+    private mongodbService: MongodbService) {}
 
-
+    
+  
 
   ngOnInit(): void {
 
     this.fetchData();
+    this.getWatchlist();
 
   }
+
+  changeWatchlist(value: boolean){
+    if(value){
+      this.getWatchlist()
+    }
+
+  }
+  getWatchlist(){
+    this.mongodbService.getWatchList(this.userId).subscribe(data => {
+      this.selectedMovies = data;
+      console.log(this.selectedMovies);
+      console.log(this.movies);
+    });
+  }
+
+  isMovieInWatchlist(movie: any): boolean {
+      return this.selectedMovies.some((selectedMovie: any) => selectedMovie.movie.id === movie.id);
+    }
+    
+    toggleWatchlist(movie: any) {
+      if (this.isMovieInWatchlist(movie)) {
+        // Remove the movie from the watchlist
+        this.mongodbService.removeFromWatchList(movie);
+      } else {
+        // Add the movie to the watchlist
+        this.mongodbService.addWatchList(movie);
+      }
+    }
 
 
   onScroll(): void {
@@ -95,6 +131,7 @@ export class HomepageComponent implements OnInit {
   getMovieData(event: any) {
 
     this.movies = event.results;
+    
 
   }
 }

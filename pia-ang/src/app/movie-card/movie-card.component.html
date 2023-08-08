@@ -4,7 +4,9 @@
 
 
   <div class="fav">
-    <button class="favbutton" type="button" *ngIf="!isdelete" (click)="addWatchList(movie)"> + </button>
+    <button class="favbutton" type="button" *ngIf="!isdelete" (click)="addWatchList(movie)"
+    [class.added]="movie.isWatchlist"
+    [class.notadded]="!movie.isWatchlist" [disabled]="movie.isWatchlist"> + </button>
     
   </div>
 
